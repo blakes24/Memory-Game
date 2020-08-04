@@ -1,0 +1,34 @@
+body {
+	text-align: center;
+}
+
+#game div {
+	border: 1px solid black;
+	width: 15%;
+	height: 200px;
+	margin: 10px;
+	display: inline-block;
+}
+
+#scoreBoards {
+	display: flex;
+	justify-content: center;
+}
+
+#scoreBoards div {
+	border: 1px solid black;
+	width: 80px;
+	height: 100px;
+	margin: 10px;
+	padding-bottom: 10px;
+}
+
+h3 {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+p {
+	font-size: 20px;
+	font-weight: 600;
+}
