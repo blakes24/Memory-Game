@@ -1,0 +1,85 @@
+body {
+	text-align: center;
+	color: rgb(15, 88, 102);
+}
+
+button {
+	background-color: rgb(15, 88, 102);
+	color: white;
+	font-size: 16px;
+}
+
+#game div {
+	border: 1px solid black;
+	width: 14vw;
+	height: 14vw;
+	margin: 10px;
+	display: inline-block;
+	background-image: url(https://i.imgur.com/fwUH54i.jpg?1);
+	background-size: contain;
+}
+
+#scoreBoards {
+	display: flex;
+	justify-content: center;
+}
+
+#scoreBoards div {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+}
+
+h3 {
+	display: inline;
+}
+
+p {
+	font-size: 20px;
+	font-weight: 600;
+	display: inline;
+}
+
+#game div.jellyfish.flipped {
+	background-image: url(https://i.imgur.com/0vg87NS.jpg?2);
+	background-size: contain;
+}
+
+#game div.seahorse.flipped {
+	background-image: url(https://i.imgur.com/N6FUTfP.jpg?1);
+	background-size: contain;
+}
+
+#game div.shark.flipped {
+	background-image: url(https://i.imgur.com/0BAEj77.jpg?1);
+	background-size: contain;
+}
+
+#game div.star.flipped {
+	background-image: url(https://i.imgur.com/ZDXHzBa.jpg?1);
+	background-size: contain;
+}
+
+#game div.turtle.flipped {
+	background-image: url(https://i.imgur.com/bWiy7ak.jpg?1);
+	background-size: contain;
+}
+
+#game div.fish.flipped {
+	background-image: url(https://i.imgur.com/sLJGbTl.jpg?1);
+	background-size: contain;
+}
+
+#game div.eel.flipped {
+	background-image: url(https://i.imgur.com/KTBy245.jpg?1);
+	background-size: contain;
+}
+
+#game div.shrimp.flipped {
+	background-image: url(https://i.imgur.com/bcEBxhl.jpg?1);
+	background-size: contain;
+}
+#game div.nudibranch.flipped {
+	background-image: url(https://i.imgur.com/OGAZR7w.jpg?1);
+	background-size: contain;
+}
