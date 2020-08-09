@@ -152,7 +152,7 @@ startBtn.addEventListener('click', function() {
 	document.querySelector('.restart').classList.remove('hide');
 });
 
-const restartBtn = document.querySelector('#restart');
+const restartBtn = document.querySelector('.restart');
 
 restartBtn.addEventListener('click', function() {
 	let cards = document.querySelectorAll('#game div');
