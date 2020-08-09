@@ -149,6 +149,7 @@ const startBtn = document.querySelector('#start');
 startBtn.addEventListener('click', function() {
 	createDivsForCards(shuffledCards);
 	startBtn.remove();
+	document.querySelector('.restart').classList.remove('hide');
 });
 
 const restartBtn = document.querySelector('#restart');
@@ -163,5 +164,3 @@ restartBtn.addEventListener('click', function() {
 	score = 0;
 	scoreBoard.innerText = score;
 });
-
-// when the DOM loads

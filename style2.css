@@ -1,12 +1,19 @@
 body {
 	text-align: center;
 	color: rgb(15, 88, 102);
+	background-image: url(https://i.imgur.com/2UVzsZR.jpg?2);
+	background-size: cover;
 }
 
 button {
 	background-color: rgb(15, 88, 102);
 	color: white;
 	font-size: 16px;
+	margin: 10px;
+}
+
+.hide {
+	display: none;
 }
 
 #game div {
@@ -25,9 +32,13 @@ button {
 }
 
 #scoreBoards div {
-	border: 1px solid black;
-	margin: 10px;
-	padding: 10px;
+	margin: 0 10px 10px 10px;
+	padding: 0;
+}
+
+h1 {
+	font-size: 50px;
+	margin: 20px;
 }
 
 h3 {
@@ -82,4 +93,23 @@ p {
 #game div.nudibranch.flipped {
 	background-image: url(https://i.imgur.com/OGAZR7w.jpg?1);
 	background-size: contain;
+}
+
+@media only screen and (max-width: 768px) {
+	#game div {
+		width: 16vw;
+		height: 16vw;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	body {
+		background: url(https://i.imgur.com/2UVzsZR.jpg?2) no-repeat center center fixed;
+		background-size: cover;
+	}
+
+	#game div {
+		width: 20vw;
+		height: 20vw;
+	}
 }
