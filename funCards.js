@@ -80,7 +80,6 @@ function handleCardClick(event) {
 	flipped++;
 	// checks for first card flipped
 	if (flipped === 1) {
-		score++;
 		scoreBoard.innerText = score;
 		event.target.classList.add('flipped');
 		pic1 = pic;
@@ -126,7 +125,7 @@ function handleCardClick(event) {
 	if (check === match) {
 		setTimeout(function() {
 			alert('You win!');
-		}, 100);
+		}, 500);
 		let checkScore = score;
 		if (checkScore < bestScore || bestScore === '') {
 			bestScore = score;
@@ -134,7 +133,7 @@ function handleCardClick(event) {
 			localStorage.setItem('bestScore', score);
 			setTimeout(function() {
 				alert('New best score!');
-			}, 200);
+			}, 600);
 		}
 	}
 }
