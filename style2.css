@@ -58,6 +58,7 @@ button:hover {
 	background-image: url(https://i.imgur.com/fwUH54i.jpg?1);
 	background-size: contain;
 	box-shadow: 2px 2px 7px 2px #656565;
+	transition: .5s;
 }
 
 #game div:active {
@@ -77,6 +78,10 @@ button:hover {
 	margin: 0 10px 10px 10px;
 	padding: 0;
 	font-size: 20px;
+}
+
+#game div.flipped {
+	transition: .5s;
 }
 
 #game div.jellyfish.flipped {
