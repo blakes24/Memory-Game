@@ -112,7 +112,7 @@ function handleCardClick(event) {
 					}
 				}
 				flipped = 0;
-			}, 1000);
+			}, 1100);
 		}
 		// checks if all cards are matched and game is complete
 		let check = 0;
@@ -124,14 +124,16 @@ function handleCardClick(event) {
 			}
 		}
 		if (check === match) {
-			document.querySelector('.winner').classList.toggle('hide');
-			let checkScore = score;
-			if (checkScore < bestScore || bestScore === '') {
-				bestScore = score;
-				bestScoreBoard.innerText = bestScore;
-				localStorage.setItem('bestScore', score);
-				document.querySelector('.best').classList.toggle('hide');
-			}
+			setTimeout(function() {
+				document.querySelector('.winner').classList.toggle('hide');
+				let checkScore = score;
+				if (checkScore < bestScore || bestScore === '') {
+					bestScore = score;
+					bestScoreBoard.innerText = bestScore;
+					localStorage.setItem('bestScore', score);
+					document.querySelector('.best').classList.toggle('hide');
+				}
+			}, 900);
 		}
 	}
 }
