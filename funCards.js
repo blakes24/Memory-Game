@@ -77,63 +77,61 @@ function handleCardClick(event) {
 	// you can use event.target to see which element was clicked
 	const pic = event.target.getAttribute('class');
 	const divs = document.querySelectorAll('#game div');
-	flipped++;
-	// checks for first card flipped
-	if (flipped === 1) {
-		scoreBoard.innerText = score;
-		event.target.classList.add('flipped');
-		pic1 = pic;
-		card1 = event.target;
-	}
-	// checks for second card flipped
-	if (flipped === 2) {
-		event.target.classList.add('flipped');
-		pic2 = pic;
-		card2 = event.target;
-		// checks that user doesn't click same card twice
-		if (card1 !== card2) {
-			score++;
-			scoreBoard.innerText = score;
+	// checks that card has not been flipped already
+	if (!event.target.classList.contains('flipped')) {
+		flipped++;
+		// checks for first card flipped
+		if (flipped === 1) {
+			event.target.classList.add('flipped');
+			pic1 = pic;
+			card1 = event.target;
 		}
-		// checks if cards match
-		if ((pic1 === pic2) & (card1 !== card2)) {
-			for (let div of divs) {
-				if (div.classList.contains(pic)) {
-					div.classList.add('match');
+		// checks for second card flipped
+		if (flipped === 2) {
+			event.target.classList.add('flipped');
+			pic2 = pic;
+			card2 = event.target;
+			// checks that user doesn't click same card twice
+			if (card1 !== card2) {
+				score++;
+				scoreBoard.innerText = score;
+			}
+			// checks if cards match
+			if ((pic1 === pic2) & (card1 !== card2)) {
+				for (let div of divs) {
+					if (div.classList.contains(pic)) {
+						div.classList.add('match');
+					}
 				}
 			}
-		}
-		// flips cards back over if they don't match
-		setTimeout(function() {
-			for (let div of divs) {
-				if (!div.classList.contains('match')) {
-					div.classList.remove('flipped');
-				}
-			}
-			flipped = 0;
-		}, 1000);
-	}
-	// checks if all cards are matched and game is complete
-	let check = 0;
-	let match = 0;
-	for (let div of divs) {
-		check++;
-		if (div.classList.contains('match')) {
-			match++;
-		}
-	}
-	if (check === match) {
-		setTimeout(function() {
-			alert('You win!');
-		}, 500);
-		let checkScore = score;
-		if (checkScore < bestScore || bestScore === '') {
-			bestScore = score;
-			bestScoreBoard.innerText = bestScore;
-			localStorage.setItem('bestScore', score);
+			// flips cards back over if they don't match
 			setTimeout(function() {
-				alert('New best score!');
-			}, 600);
+				for (let div of divs) {
+					if (!div.classList.contains('match')) {
+						div.classList.remove('flipped');
+					}
+				}
+				flipped = 0;
+			}, 1000);
+		}
+		// checks if all cards are matched and game is complete
+		let check = 0;
+		let match = 0;
+		for (let div of divs) {
+			check++;
+			if (div.classList.contains('match')) {
+				match++;
+			}
+		}
+		if (check === match) {
+			document.querySelector('.winner').classList.toggle('hide');
+			let checkScore = score;
+			if (checkScore < bestScore || bestScore === '') {
+				bestScore = score;
+				bestScoreBoard.innerText = bestScore;
+				localStorage.setItem('bestScore', score);
+				document.querySelector('.best').classList.toggle('hide');
+			}
 		}
 	}
 }
@@ -161,6 +159,8 @@ restartBtn.addEventListener('click', function() {
 	for (let card of cards) {
 		card.remove();
 	}
+	document.querySelector('.winner').classList.add('hide');
+	document.querySelector('.best').classList.add('hide');
 	shuffle(seaCards);
 	createDivsForCards(shuffledCards);
 	score = 0;

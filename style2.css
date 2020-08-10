@@ -45,6 +45,24 @@ button:hover {
 	display: none;
 }
 
+#win {
+	display: flex;
+	justify-content: center;
+}
+
+.winner,
+.best {
+	color: rgb(215, 218, 224);
+	font-size: 35px;
+	background-color: rgb(15, 88, 102);
+	padding: 20px;
+	margin: 20px;
+	width: fit-content;
+	text-align: center;
+	border-radius: 3px;
+	box-shadow: 2px 2px 7px 2px #656565;
+}
+
 #game {
 	margin-bottom: 15vh;
 }
@@ -148,5 +166,10 @@ button:hover {
 	#game div {
 		width: 24vw;
 		height: 24vw;
+	}
+
+	.winner,
+	.best {
+		padding: 15px;
 	}
 }
