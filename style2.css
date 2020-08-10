@@ -58,6 +58,7 @@ button:hover {
 	padding: 20px;
 	margin: 20px;
 	width: fit-content;
+	height: fit-content;
 	text-align: center;
 	border-radius: 3px;
 	box-shadow: 2px 2px 7px 2px #656565;
@@ -170,6 +171,7 @@ button:hover {
 
 	.winner,
 	.best {
-		padding: 15px;
+		padding: 10px;
+		font-size: 25px;
 	}
 }
