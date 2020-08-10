@@ -135,10 +135,14 @@ button:hover {
 	}
 }
 
-@media only screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
 	body {
 		background: url(https://i.imgur.com/2UVzsZR.jpg?2) no-repeat center center fixed;
 		background-size: cover;
+	}
+
+	h1 {
+		font-size: 36px;
 	}
 
 	#game div {
