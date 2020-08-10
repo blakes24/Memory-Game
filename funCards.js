@@ -125,13 +125,16 @@ function handleCardClick(event) {
 	}
 	if (check === match) {
 		setTimeout(function() {
-			alert('you win');
+			alert('You win!');
 		}, 100);
 		let checkScore = score;
 		if (checkScore < bestScore || bestScore === '') {
 			bestScore = score;
 			bestScoreBoard.innerText = bestScore;
 			localStorage.setItem('bestScore', score);
+			setTimeout(function() {
+				alert('New best score!');
+			}, 200);
 		}
 	}
 }
